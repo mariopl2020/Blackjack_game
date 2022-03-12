@@ -28,7 +28,7 @@ class CardsDeck():
 		for card in self.cards:
 			print(card)
 
-
-cards_deck = CardsDeck()
-cards_deck.create_deck()
-cards_deck.show_deck()
+if __name__ == "__main__":
+	cards_deck = CardsDeck()
+	cards_deck.create_deck()
+	cards_deck.show_deck()
