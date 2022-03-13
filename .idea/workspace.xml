@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5ec9bdc-a185-437c-b37e-43c070a47cad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/cards_deck.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_main_game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cards_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_cards_deck.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +38,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Udemy Rafał Mobilo - średniozaawansowany/Lekcja78 Klasy" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Udemy Rafał Mobilo - średniozaawansowany/Lekcja114 Dziedziczenie" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Programowanie\Pycamp\Projekty\2_blackjack\tests" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

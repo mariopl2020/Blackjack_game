@@ -1,3 +1,4 @@
+from random import shuffle
 from card import Card
 
 class CardsDeck():
@@ -13,7 +14,7 @@ class CardsDeck():
 		"""Creating deck of cards as list of card objects
 
 		Returns:
-			self.cards (list): list fulfilled by card objectss
+			self.cards (list): list fulfilled by card objects
 		"""
 
 		for name, value in Card.possible_figeres.items():
@@ -26,9 +27,13 @@ class CardsDeck():
 		"""Printing all created cards"""
 
 		for card in self.cards:
-			print(card)
+			print(card.name, card.colour)
+		print("------")
 
-if __name__ == "__main__":
-	cards_deck = CardsDeck()
-	cards_deck.create_deck()
-	cards_deck.show_deck()
+
+	def shuffle_deck(self):
+		"""Shuffling of cards deck"""
+
+		shuffle(self.cards)
+
+cards_deck = CardsDeck()
