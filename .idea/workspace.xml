@@ -6,12 +6,12 @@
       <change afterPath="$PROJECT_DIR$/exceptions/answer_exceptions.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exceptions/game_exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions/game_exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_cards_deck.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_main_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_main_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_person.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

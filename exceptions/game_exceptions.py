@@ -3,3 +3,6 @@ class ExceededLimit(Exception):
 
 class BlackJack(Exception):
 	pass
+
+class DrawException(Exception):
+	pass

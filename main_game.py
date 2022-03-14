@@ -1,7 +1,7 @@
 from deck import cards_deck
 from person import Player, Croupier
 from exceptions.answer_exceptions import InvalidAnswer
-from exceptions.game_exceptions import ExceededLimit, BlackJack
+from exceptions.game_exceptions import ExceededLimit, BlackJack, DrawException
 
 class Game():
 	"""Represents single game"""
@@ -19,9 +19,28 @@ class Game():
 
 		self.player1.take_card()
 		self.player1.take_card()
-		self.player1.check_if_black_jack()
 		self.croupier1.take_card()
 		self.croupier1.take_card()
+
+		# self.player1.check_if_black_jack()
+		# self.croupier1.check_if_black_jack()
+		# self.check_if_blackjack_draw()
+
+		try:
+			self.player1.check_if_black_jack()
+		except BlackJack as ex:
+			print(ex)
+		try:
+			self.croupier1.check_if_black_jack()
+		except BlackJack as ex:
+			print(ex)
+			self.check_if_blackjack_draw()
+
+	def check_if_blackjack_draw(self):
+		""""""
+
+		if self.croupier1.current_score == self.points_limit and self.player1.current_score == self.points_limit:
+			raise DrawException("You have the same score. BlackJack draw!")
 
 	def player_run(self):
 		"""Consists of whole steps of player's run in logic loop. Defined exception checks, if player do not lose"""
@@ -44,11 +63,11 @@ game1 = Game()
 
 if __name__ == "__main__":
 	cards_deck.create_deck()
-	cards_deck.shuffle_deck()
+	# cards_deck.shuffle_deck()
 	cards_deck.show_deck()
 	try:
 		game1.first_distribution()
-	except BlackJack as ex:
+	except (DrawException) as ex:
 		print(ex)
 	else:
 		game1.player1.show_person_cards()
@@ -56,8 +75,3 @@ if __name__ == "__main__":
 		game1.croupier1.show_person_cards()
 		game1.croupier1.show_current_score()
 		game1.player_run()
-
-
-
-
-

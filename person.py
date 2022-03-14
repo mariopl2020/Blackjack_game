@@ -15,7 +15,7 @@ class  Person():
 
 
 	def take_card(self):
-		"""Simulates taking one card by person and thereby increases person score"""
+		"""Simulates taking one card.py by person and thereby increases person score"""
 
 		currently_taken_card = cards_deck.cards.pop(-1)
 		self.person_cards.append(currently_taken_card)
@@ -32,6 +32,13 @@ class  Person():
 		"""Shows current person's score"""
 
 		print(f"Person's score: {self.current_score}")
+
+	def check_if_black_jack(self):
+		"""Checks if person get black jack at the beginning"""
+
+		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
+			self.current_score = 21
+			raise BlackJack("You have black jack")
 
 
 class Player(Person):
@@ -54,14 +61,14 @@ class Player(Person):
 
 
 	def ask_about_another_cards(self):
-		"""Asks player whether he would like to take another card to increase score.
+		"""Asks player whether he would like to take another card.py to increase score.
 
 		Returns:
 			False (bool): if player do not want to take cards anymore
 			True (bool):  if player want to take next ard
 		"""
 
-		self.answer = input("Do you take another card? (y/n)\n")
+		self.answer = input("Do you take another card.py? (y/n)\n")
 		if self.answer == "n":
 			return False
 		elif self.answer == "y":
@@ -90,11 +97,11 @@ class Player(Person):
 			raise ExceededLimit("You have more than 21 points. You lost!")
 
 	def check_if_black_jack(self):
-		"""Checks if user get black jack at the beginning"""
+		"""Checks if player get black jack at the beginning"""
 
 		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
 			self.current_score = 21
-			raise BlackJack("You won! You have black jack")
+			raise BlackJack("Player have black jack")
 
 
 class Croupier(Person):
@@ -116,6 +123,12 @@ class Croupier(Person):
 
 		print(f"Croupier's score: {self.current_score}")
 
+	def check_if_black_jack(self):
+		"""Checks if croupier get black jack at the beginning"""
+
+		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
+			self.current_score = 21
+			raise BlackJack("Croupier have black jack")
 
 # person1 = Player()
 # croupier1 = Croupier()

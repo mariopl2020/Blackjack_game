@@ -11,15 +11,15 @@ class CardsDeck():
 
 
 	def create_deck(self):
-		"""Creating deck of cards as list of card objects
+		"""Creating deck of cards as list of card.py objects
 
 		Returns:
-			self.cards (list): list fulfilled by card objects
+			self.cards (list): list fulfilled by card.py objects
 		"""
 
-		for name, value in Card.possible_figeres.items():
-			for colour in Card.possible_colours:
-				self.cards.append(Card(name, value, colour))
+		for name in Card.POSSIBLE_FIGURES.keys():
+			for colour in Card.POSSIBLE_COLOURS:
+				self.cards.append(Card(name, colour))
 		return self.cards
 
 
