@@ -1,5 +1,6 @@
 from deck import cards_deck
 from exceptions.answer_exceptions import InvalidAnswer
+from exceptions.game_exceptions import ExceededLimit
 
 class  Person():
 	"""Represents person who plays in the game"""
@@ -9,6 +10,7 @@ class  Person():
 
 		self.person_cards = []
 		self.current_score = 0
+
 		# self.cards_deck = CardsDeck()
 
 
@@ -59,29 +61,36 @@ class Player(Person):
 			True (bool):  if player want to take next ard
 		"""
 
-		try:
-			self.answer = input("Do you take another card? (y/n)\n")
-			if self.answer == "n":
-				return False
-			elif self.answer == "y":
-				return True
-			else:
-				raise InvalidAnswer("You have entered wrong value! Try again")
-		except InvalidAnswer as exception:
-			print(exception)
+		self.answer = input("Do you take another card? (y/n)\n")
+		if self.answer == "n":
+			return False
+		elif self.answer == "y":
+			return True
+		else:
+			raise InvalidAnswer("You have entered wrong value! Try again")
+
+
 
 
 	def take_another_cards(self):
-		"""Interpretes player's answer, if he want to take cards anymore or not """
+		"""Interprets player's answer, if he want to take cards anymore or not """
 
-		while True:
-			taking_cards = self.ask_about_another_cards()
-			if taking_cards == False:
-				break
-			elif taking_cards == True:
-				self.take_card()
-				self.show_person_cards()
-				self.show_current_score()
+		# taking_cards = self.ask_about_another_cards()
+		# if taking_cards == False:
+		# 	br
+		# elif taking_cards == True:
+		self.take_card()
+		self.show_person_cards()
+		self.show_current_score()
+
+	def check_if_lost(self, points_limit):
+		"""Checks if user exceed points limit what defines defeat"""
+
+		if self.current_score > points_limit:
+			raise ExceededLimit("You have more than 21 points. You lost!")
+
+	def check_if_black_jack(self):
+		pass
 
 
 class Croupier(Person):

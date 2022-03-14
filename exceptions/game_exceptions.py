@@ -1,0 +1,2 @@
+class ExceededLimit(Exception):
+	pass
