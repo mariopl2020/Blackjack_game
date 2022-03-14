@@ -1,5 +1,5 @@
 from person import Player
-from deck import cards_deck
+from cards_deck import cards_deck
 from main_game import Game
 from exceptions.game_exceptions import BlackJack
 

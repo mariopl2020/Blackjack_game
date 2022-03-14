@@ -1,4 +1,4 @@
-from deck import cards_deck
+from cards_deck import cards_deck
 from exceptions.answer_exceptions import InvalidAnswer
 from exceptions.game_exceptions import ExceededLimit, BlackJack
 

@@ -4,14 +4,15 @@
     <list default="true" id="d5ec9bdc-a185-437c-b37e-43c070a47cad" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/exceptions/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/exceptions/answer_exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exceptions/card_exception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions/game_exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/exceptions/game_exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/cards_deck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/person.py" beforeDir="false" afterPath="$PROJECT_DIR$/person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cards_deck.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_cards_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/cards_deck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_main_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_main_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_person.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_person.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Udemy Rafał Mobilo - średniozaawansowany/Lekcja114 Dziedziczenie" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

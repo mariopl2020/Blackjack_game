@@ -5,12 +5,11 @@ class CardsDeck():
 	"""Representation of deck of playing cards"""
 
 	def __init__(self):
-		"""Initializing of full deck of cards as list"""
+		"""Initializing deck of cards as list"""
 
 		self.cards = []
 
-
-	def create_deck(self):
+	def create_deck(self) -> list:
 		"""Creating deck of cards as list of card.py objects
 
 		Returns:
@@ -19,7 +18,7 @@ class CardsDeck():
 
 		for name in Card.POSSIBLE_FIGURES.keys():
 			for colour in Card.POSSIBLE_COLOURS:
-				self.cards.append(Card(name, colour))
+				self.cards.append(Card(name=name, colour=colour))
 		return self.cards
 
 
