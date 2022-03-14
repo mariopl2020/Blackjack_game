@@ -1,0 +1,3 @@
+
+class InvalidAnswer(Exception):
+	pass

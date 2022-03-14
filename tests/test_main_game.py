@@ -1,5 +1,5 @@
 from main_game import Game
-from player import person1, croupier1
+from person import person1, croupier1
 from deck import cards_deck
 from card import Card
 
