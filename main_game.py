@@ -1,7 +1,7 @@
 from deck import cards_deck
 from person import Player, Croupier
 from exceptions.answer_exceptions import InvalidAnswer
-from exceptions.game_exceptions import ExceededLimit
+from exceptions.game_exceptions import ExceededLimit, BlackJack
 
 class Game():
 	"""Represents single game"""
@@ -19,11 +19,12 @@ class Game():
 
 		self.player1.take_card()
 		self.player1.take_card()
+		self.player1.check_if_black_jack()
 		self.croupier1.take_card()
 		self.croupier1.take_card()
 
 	def player_run(self):
-		""""""
+		"""Consists of whole steps of player's run in logic loop. Defined exception checks, if player do not lose"""
 
 		while True:
 			try:
@@ -45,13 +46,17 @@ if __name__ == "__main__":
 	cards_deck.create_deck()
 	cards_deck.shuffle_deck()
 	cards_deck.show_deck()
-	game1.first_distribution()
+	try:
+		game1.first_distribution()
+	except BlackJack as ex:
+		print(ex)
+	else:
+		game1.player1.show_person_cards()
+		game1.player1.show_current_score()
+		game1.croupier1.show_person_cards()
+		game1.croupier1.show_current_score()
+		game1.player_run()
 
-	game1.player1.show_person_cards()
-	game1.player1.show_current_score()
-	game1.croupier1.show_person_cards()
-	game1.croupier1.show_current_score()
-	game1.player_run()
 
 
 

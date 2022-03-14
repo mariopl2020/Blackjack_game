@@ -1,6 +1,6 @@
 from deck import cards_deck
 from exceptions.answer_exceptions import InvalidAnswer
-from exceptions.game_exceptions import ExceededLimit
+from exceptions.game_exceptions import ExceededLimit, BlackJack
 
 class  Person():
 	"""Represents person who plays in the game"""
@@ -90,7 +90,11 @@ class Player(Person):
 			raise ExceededLimit("You have more than 21 points. You lost!")
 
 	def check_if_black_jack(self):
-		pass
+		"""Checks if user get black jack at the beginning"""
+
+		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
+			self.current_score = 21
+			raise BlackJack("You won! You have black jack")
 
 
 class Croupier(Person):
@@ -111,7 +115,6 @@ class Croupier(Person):
 		"""Shows current croupier's score"""
 
 		print(f"Croupier's score: {self.current_score}")
-
 
 
 # person1 = Player()

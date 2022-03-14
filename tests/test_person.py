@@ -1,6 +1,7 @@
 from person import Player
 from deck import cards_deck
 from main_game import Game
+from exceptions.game_exceptions import BlackJack
 
 def test_take_card():
 	"""Test checks, if card is taken by player from last index in cards list and correctly count points"""
@@ -20,6 +21,21 @@ def test_take_card():
 	assert test_player.person_cards[1] == second_card_in_deck
 	assert test_player.current_score == first_card_in_deck.value + second_card_in_deck.value
 
+
+def test_check_if_black_jack():
+	"""Checks what happens when player has blackjack, how many points he has and if croupier's card deck is empty """
+
+	#GIVEN
+	test_game = Game()
+	cards_deck.create_deck()
+	#WHEN
+	try:
+		test_game.first_distribution()
+	except BlackJack as ex:
+		pass
+	#THEN
+	assert test_game.player1.current_score == 21
+	assert test_game.croupier1.person_cards == []
 
 #TO DO
 # def test_take_another_cards():
