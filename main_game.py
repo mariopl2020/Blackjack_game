@@ -22,6 +22,7 @@ class Game():
 		self.croupier1.take_card()
 		self.croupier1.take_card()
 
+
 		# self.player1.check_if_black_jack()
 		# self.croupier1.check_if_black_jack()
 		# self.check_if_blackjack_draw()

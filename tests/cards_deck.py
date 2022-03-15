@@ -25,8 +25,8 @@ def test_create_deck_colours():
 	card_deck.create_deck()
 	#THEN
 	for colour in Card.POSSIBLE_COLOURS:
-		card_in_colour = [card for card in card_deck.cards if card.colour == colour]
-		assert len(card_in_colour) == cards_number_in_colour
+		cards_in_colour = [card for card in card_deck.cards if card.colour == colour]
+		assert len(cards_in_colour) == cards_number_in_colour
 
 
 def test_create_deck_name():
@@ -66,3 +66,32 @@ def test_shuffle_deck():
 	)
 	assert tested_deck != deck.cards
 	assert len(deck.cards) == 52
+
+def test_give_card():
+	"""Tests correctness of giving card from the deck"""
+
+	#GIVEN
+	cards_deck = CardsDeck()
+	#WHEN
+	cards_deck.create_deck()
+	first_card_for_person = cards_deck.cards[-1]
+	second_card_for_person = cards_deck.cards[-2]
+	#THEN
+	assert cards_deck.give_card() == first_card_for_person
+	assert cards_deck.give_card() == second_card_for_person
+	assert first_card_for_person not in cards_deck.cards
+
+def test_give_card_count_cards():
+	"""Tests if remaining cards number in the deck after giving card is correct"""
+
+	#GIVEN
+	cards_deck = CardsDeck()
+	cards_number = 50
+	#WHEN
+	cards_deck.create_deck()
+	cards_deck.give_card()
+	cards_deck.give_card()
+	#THEN
+	assert len(cards_deck.cards) == cards_number
+
+	

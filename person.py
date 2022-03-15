@@ -1,4 +1,4 @@
-from cards_deck import cards_deck
+from card import Card
 from exceptions.answer_exceptions import InvalidAnswer
 from exceptions.game_exceptions import ExceededLimit, BlackJack
 
@@ -11,22 +11,26 @@ class  Person():
 		self.person_cards = []
 		self.current_score = 0
 
-		# self.cards_deck = CardsDeck()
+	def take_card(self, card: Card):
+		"""Simulates taking one card by person and thereby increases person score"""
 
+		self.person_cards.append(card)
+		self.current_score += card.value
 
-	def take_card(self):
-		"""Simulates taking one card.py by person and thereby increases person score"""
+	def calculate_points(self) -> int:
+		"""Calculates total points after looking at all person's cards
 
-		currently_taken_card = cards_deck.cards.pop(-1)
-		self.person_cards.append(currently_taken_card)
-		self.current_score += currently_taken_card.value
+		Returns points (int): amount of player's points"""
 
+		points = 0
+		for card in self.person_cards:
+			points += card.value
+		return points
 
 	def show_person_cards(self):
 		"""Shows current person's cards set"""
 
 		print(f"Person's cards: {self.person_cards}")
-
 
 	def show_current_score(self):
 		"""Shows current person's score"""
@@ -129,6 +133,3 @@ class Croupier(Person):
 		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
 			self.current_score = 21
 			raise BlackJack("Croupier have black jack")
-
-# person1 = Player()
-# croupier1 = Croupier()

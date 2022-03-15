@@ -19,7 +19,9 @@ def test_take_card():
 	#THEN
 	assert test_player.person_cards[0] == first_card_in_deck
 	assert test_player.person_cards[1] == second_card_in_deck
+	assert len(cards_deck.cards) == 50
 	assert test_player.current_score == first_card_in_deck.value + second_card_in_deck.value
+	assert test_player.person_cards[0] not in cards_deck.cards
 
 
 def test_check_if_black_jack():

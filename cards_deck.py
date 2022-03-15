@@ -21,7 +21,6 @@ class CardsDeck():
 				self.cards.append(Card(name=name, colour=colour))
 		return self.cards
 
-
 	def show_deck(self):
 		"""Printing all created cards"""
 
@@ -35,4 +34,13 @@ class CardsDeck():
 
 		shuffle(self.cards)
 
+	def give_card(self) -> Card:
+		"""Giving one card from the top of deck
+
+		Returns: card_for_person (Card): card what is given to the person
+			"""
+
+		card_for_person = self.cards.pop()
+		return card_for_person
+		
 cards_deck = CardsDeck()
