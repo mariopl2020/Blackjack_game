@@ -12,19 +12,27 @@ class  Person():
 		self.current_score = 0
 
 	def take_card(self, card: Card):
-		"""Simulates taking one card by person and thereby increases person score"""
+		"""Simulates taking one card by person and thereby increases person's score"""
 
 		self.person_cards.append(card)
-		self.current_score += card.value
+		self.current_score = self.calculate_points()
 
 	def calculate_points(self) -> int:
 		"""Calculates total points after looking at all person's cards
 
-		Returns points (int): amount of player's points"""
+		Returns: points (int): amount of player's points"""
 
 		points = 0
-		for card in self.person_cards:
-			points += card.value
+		aces_list = [card for card in self.person_cards if card.name == "A"]
+		self.aces_number = len(aces_list)
+		if self.aces_number == 2 and len(self.person_cards) == 2:
+			points = 21
+		else:
+			for card in self.person_cards:
+				if len(self.person_cards) > 2 and card.name == "A":
+					card.value = 1
+				points += card.value
+
 		return points
 
 	def show_person_cards(self):

@@ -1,4 +1,4 @@
-from cards_deck import cards_deck
+from cards_deck import CardsDeck
 from person import Player, Croupier
 from exceptions.answer_exceptions import InvalidAnswer
 from exceptions.game_exceptions import ExceededLimit, BlackJack, DrawException
@@ -12,7 +12,7 @@ class Game():
 		self.player1 = Player()
 		self.croupier1 = Croupier()
 		self.points_limit = 21
-	# 	self.cards_deck = CardsDeck()
+		self.cards_deck = CardsDeck()
 
 	def first_distribution(self):
 		"""Gives two cards for both player and croupier"""
@@ -63,9 +63,9 @@ class Game():
 game1 = Game()
 
 if __name__ == "__main__":
-	cards_deck.create_deck()
-	# cards_deck.shuffle_deck()
-	cards_deck.show_deck()
+	game1.cards_deck.create_deck()
+	# game1.cards_deck.shuffle_deck()
+	game1.cards_deck.show_deck()
 	try:
 		game1.first_distribution()
 	except (DrawException) as ex:

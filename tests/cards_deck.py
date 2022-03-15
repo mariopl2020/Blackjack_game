@@ -44,28 +44,28 @@ def test_create_deck_name():
 
 
 def test_shuffle_deck():
-	"""Test checks, if cards in deck are shuffled in comparison to primary cards order """
+	"""Test checks, if cards in cards_deck are shuffled in comparison to primary cards order """
 
 	#GIVEN
-	deck = CardsDeck()
-	deck.create_deck()
-	tested_deck = deck.cards.copy()
-	first_card = deck.cards[0]
-	tenth_card = deck.cards[9]
-	twenth_card = deck.cards[19]
+	cards_deck = CardsDeck()
+	cards_deck.create_deck()
+	tested_deck = cards_deck.cards.copy()
+	first_card = cards_deck.cards[0]
+	tenth_card = cards_deck.cards[9]
+	twenth_card = cards_deck.cards[19]
 
 	#WHEN
-	deck.shuffle_deck()
+	cards_deck.shuffle_deck()
 
 	#THEN
 	assert all(
-		[first_card != deck.cards[0],
-		tenth_card != deck.cards[9],
-		twenth_card != deck.cards[19]
+		[first_card != cards_deck.cards[0],
+		tenth_card != cards_deck.cards[9],
+		twenth_card != cards_deck.cards[19]
 		]
 	)
-	assert tested_deck != deck.cards
-	assert len(deck.cards) == 52
+	assert tested_deck != cards_deck.cards
+	assert len(cards_deck.cards) == 52
 
 def test_give_card():
 	"""Tests correctness of giving card from the deck"""

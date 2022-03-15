@@ -15,7 +15,7 @@ class Card():
 
         Args:
             name (str): figure name of card.py
-            colour (int): kind of card.py's colour
+            colour (str): kind of card's colour
         """
 
         if name not in self.POSSIBLE_FIGURES:

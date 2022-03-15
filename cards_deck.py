@@ -43,4 +43,4 @@ class CardsDeck():
 		card_for_person = self.cards.pop()
 		return card_for_person
 		
-cards_deck = CardsDeck()
+# cards_deck = CardsDeck()
