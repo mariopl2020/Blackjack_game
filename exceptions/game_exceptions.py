@@ -6,3 +6,6 @@ class BlackJack(Exception):
 
 class DrawException(Exception):
 	pass
+
+class CroupierWin(Exception):
+	pass

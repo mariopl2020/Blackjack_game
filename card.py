@@ -8,13 +8,13 @@ class Card():
 
     POSSIBLE_FIGURES = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9,\
                         "10": 10, "J": 10, "Q": 10, "K": 10, "A": 11}
-    POSSIBLE_COLOURS = ["heart", "diamond", "club", "spade"]
+    POSSIBLE_COLOURS = ["heart", "diamond"]#, "club", "spade"]
 
     def __init__(self, name, colour):
         """Initializing card object with appropriate parameters validation
 
         Args:
-            name (str): figure name of card.py
+            name (str): figure name of card
             colour (str): kind of card's colour
         """
 

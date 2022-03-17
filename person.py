@@ -1,6 +1,6 @@
 from card import Card
 from exceptions.answer_exceptions import InvalidAnswer
-from exceptions.game_exceptions import ExceededLimit, BlackJack
+from exceptions.game_exceptions import ExceededLimit, BlackJack, CroupierWin, DrawException
 
 class  Person():
 	"""Represents person who plays in the game"""
@@ -49,8 +49,8 @@ class  Person():
 		"""Checks if person get black jack at the beginning"""
 
 		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
-			self.current_score = 21
 			raise BlackJack("You have black jack")
+
 
 
 class Player(Person):
@@ -71,7 +71,6 @@ class Player(Person):
 
 		print(f"Player's score: {self.current_score}")
 
-
 	def ask_about_another_cards(self):
 		"""Asks player whether he would like to take another card.py to increase score.
 
@@ -80,7 +79,7 @@ class Player(Person):
 			True (bool):  if player want to take next ard
 		"""
 
-		self.answer = input("Do you take another card.py? (y/n)\n")
+		self.answer = input("Do you take another card? (y/n)\n")
 		if self.answer == "n":
 			return False
 		elif self.answer == "y":
@@ -88,25 +87,16 @@ class Player(Person):
 		else:
 			raise InvalidAnswer("You have entered wrong value! Try again")
 
+	def take_another_cards(self, card: Card):
+		"""Interprets player's answer, if he wants to take cards anymore or not
 
+		Arguments:
+			card (Card): next card taken from game deck
+		"""
 
-
-	def take_another_cards(self):
-		"""Interprets player's answer, if he want to take cards anymore or not """
-
-		# taking_cards = self.ask_about_another_cards()
-		# if taking_cards == False:
-		# 	br
-		# elif taking_cards == True:
-		self.take_card()
+		self.take_card(card)
 		self.show_person_cards()
 		self.show_current_score()
-
-	def check_if_lost(self, points_limit):
-		"""Checks if user exceed points limit what defines defeat"""
-
-		if self.current_score > points_limit:
-			raise ExceededLimit("You have more than 21 points. You lost!")
 
 	def check_if_black_jack(self):
 		"""Checks if player get black jack at the beginning"""
@@ -114,6 +104,12 @@ class Player(Person):
 		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
 			self.current_score = 21
 			raise BlackJack("Player have black jack")
+
+	def check_if_exceed_limit(self, points_limit):
+		"""Checks if player exceeds points limit what defines defeat"""
+
+		if self.current_score > points_limit:
+			raise ExceededLimit("You have more than 21 points. You lost!")
 
 
 class Croupier(Person):
@@ -129,7 +125,6 @@ class Croupier(Person):
 
 		print(f"Croupier's cards: {self.person_cards}")
 
-
 	def show_current_score(self):
 		"""Shows current croupier's score"""
 
@@ -141,3 +136,17 @@ class Croupier(Person):
 		if self.person_cards[0].name == "A" and self.person_cards[1].name == "A":
 			self.current_score = 21
 			raise BlackJack("Croupier have black jack")
+
+	def take_cards_algorithm(self, player_score: int, points_limit: int, card: Card):
+		"""Defines when croupier as artificial intelligence should take cards"""
+
+		if self.current_score > player_score and self.current_score <= points_limit:
+			raise CroupierWin("Croupier wins")
+		elif self.current_score > player_score and self.current_score > points_limit:
+			raise ExceededLimit("Croupier have more than 21 points. He lost!")
+		elif self.current_score == points_limit and player_score == points_limit:
+			raise DrawException(f"Both players has the same points - {points_limit} as limit. Draw!")
+		self.take_card(card)
+		self.show_person_cards()
+		self.show_current_score()
+
