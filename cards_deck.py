@@ -9,7 +9,7 @@ class CardsDeck():
 
 		self.cards = []
 
-	def create_deck(self) -> list:
+	def create_deck(self) -> list: #T
 		"""Creating deck of cards as list of card.py objects
 
 		Returns:
@@ -29,12 +29,12 @@ class CardsDeck():
 		print("------")
 
 
-	def shuffle_deck(self):
+	def shuffle_deck(self): #T
 		"""Shuffling of cards deck"""
 
 		shuffle(self.cards)
 
-	def give_card(self) -> Card:
+	def give_card(self) -> Card: #T
 		"""Giving one card from the top of deck
 
 		Returns: card_for_person (Card): card what is given to the person
@@ -42,5 +42,3 @@ class CardsDeck():
 
 		card_for_person = self.cards.pop()
 		return card_for_person
-		
-# cards_deck = CardsDeck()

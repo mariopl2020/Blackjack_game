@@ -2,9 +2,8 @@ from cards_deck import CardsDeck
 from card import Card
 
 
-def test_create_deck():
-	"""Test checking correctness of total cards number, one type of figure and one type of colour
-	"""
+def test_create_deck_cards_number():
+	"""Test checking correctness of total cards number"""
 
 	#GIVEN
 	cards_number = 52
